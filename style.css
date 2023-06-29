@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-body: "Palanquin", sans-serif;
+  --ff-top: "Staatliches", sans-serif;
+
+  font-size: 62.5%;
+  --fs-body: clamp(1.4rem, 0.5rem + 1.5vw, 2rem);
+  --fs-top: clamp(4rem, 1rem + 4vw, 4.8rem);
+  --fs-top-h2: 2rem;
+}
+
+body {
+  font-family: var(--ff-body);
+  line-height: 2rem;
+  font-weight: normal;
+
+  background: #eff1ff;
+}
+
+header {
+  min-width: 32rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #8e9aaf;
+}
+
+header img {
+  width: 13.7rem;
+  margin: 3.2rem 0;
+
+  animation: topdown 700ms;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-top);
+  line-height: 3.4rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--fs-top);
+  text-shadow: 0px 2px 2px #00000040;
+  letter-spacing: 2px;
+
+  -webkit-font-smoothing: antialiased;
+  padding: 0.8rem 0;
+
+  color: #ffffff;
+
+  animation: textdown 700ms;
+}
+
+.title {
+  background: #cbc0d3;
+  min-width: 100%;
+  text-align: center;
+  height: 4.9rem;
+  margin-bottom: 2.9rem;
+}
+
+main {
+  min-width: 32rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem 1.2rem 6rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+}
+
+.text-mobile {
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--fs-body);
+
+  max-width: 25.5rem;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 3rem;
+
+  color: #23053a;
+
+  animation: textdown 700ms;
+}
+
+.cards {
+  display: grid;
+  gap: 3.2rem;
+
+  animation: cardright 700ms 350ms backwards;
+}
+
+.card1,
+.card-desk {
+  position: relative;
+}
+
+.card1,
+.card-desk {
+  height: auto;
+  object-fit: cover;
+
+  transition: 300ms;
+}
+
+.card1:hover {
+  transform: scale(1.1);
+}
+
+.card-desk:hover {
+  transform: scale(1.1);
+}
+
+.card1 h2,
+.card-desk h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  font-size: var(--fs-top-h2);
+  color: #4a4e69;
+
+  width: 11.2rem;
+  border-radius: 20px;
+  background: #feeafa;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 921px) {
+  .cards {
+    grid-template-areas:
+      "A B"
+      "D B"
+      "D C"
+      "E F";
+
+    margin: 6.4rem 3rem 10rem;
+    margin-left: 38rem;
+  }
+
+  .cards div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6) {
+    grid-area: F;
+  }
+
+  header {
+    max-width: 37.7rem;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+  }
+
+  header .text-desktop {
+    width: 25.5rem;
+    margin: 3.2rem auto 0;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+
+    -webkit-font-smoothing: antialiased;
+    color: white;
+
+    animation: textdown 700ms;
+  }
+
+  .text-mobile {
+    display: none;
+  }
+
+  footer {
+    width: 59.2rem;
+
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    color: #4a4e69;
+
+    text-align: center;
+    margin-left: 30rem;
+  }
+
+  footer a {
+    color: #8e9aaf;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 200ms;
+  }
+
+  footer a:hover {
+    color: #6d49d8;
+    font-weight: 800;
+    text-shadow: 0px 2px 2px #00000040;
+
+    filter: contrast(2) saturate(2);
+  }
+}
+
+@media (min-width: 1100px) {
+  .cards {
+    grid-template-areas:
+      "A B C"
+      "D B E"
+      "D F E";
+  }
+
+  .cards div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3) {
+    grid-area: F;
+  }
+
+  .cards div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5) {
+    grid-area: C;
+  }
+
+  .cards div:nth-child(6) {
+    grid-area: E;
+  }
+}
+
+@media (max-width: 920px) {
+  .text-desktop {
+    display: none;
+  }
+
+  .card-desk {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@keyframes textdown {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  30% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cardright {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  30% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  20% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
