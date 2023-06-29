@@ -18,7 +18,7 @@ Página de um site para uma marca de sorvetes artesanais, exclusivo e gratuito. 
 <br>
 
 <p align="center">
-  <img alt="Copa da Página" src=".github/Capa.png" width="100%">
+  <img alt="Copa da Página" src=".github/capa.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
